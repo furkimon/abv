@@ -1,0 +1,32 @@
+.home{
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    /* overflow-y: hidden; */
+
+    width: 100vw;
+    height: 100%;
+    transition: 3s;
+}
+
+/* #aboutID, #skillsID, #projectsID, #contactID{
+    height: 100vh;
+    width: 100vw;
+} */
+
+/* 
+.about .skills .projects .contact{
+    transition: 0.5s;
+    animation: animation 3s ease;
+
+}
+
+@keyframes animation{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(-100vw);
+    }
+}
+ */

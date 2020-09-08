@@ -1,0 +1,15 @@
+*{
+    margin:0;
+}
+
+.app{
+    height: 100vh;
+    width: 100vw;
+}
+
+.app__pages {
+    display: flex;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}

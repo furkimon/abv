@@ -1,0 +1,39 @@
+.about{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.5s;
+}
+
+.about__background {
+    opacity: 0.8;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.about__logo{
+    z-index: 1;
+    position: absolute;
+    border-radius: 100%;
+    width: 10vw;
+    right: 10vw;
+    top: 10vw;
+}
+
+.about > h1{
+    z-index: 1;
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 20%;
+}
+
+.scrollable {
+    z-index: 3;
+    position: absolute;
+    color: white;
+    top: 20%;
+    left: 20%;
+    width: 20vw;
+}

@@ -1,0 +1,22 @@
+.contact {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    transition: 0.5s;
+
+}
+
+.contact__background {
+    opacity: 0.8;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.contact > h1{
+    z-index: 1;
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 20%;
+}
