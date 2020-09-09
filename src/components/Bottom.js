@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import '../assets/styles/Bottom.css'
 import { useStateValue } from '../reducer/StateProvider'
-import { Link } from 'react-scroll'
 
 
 const Bottom = () => {
@@ -23,15 +22,7 @@ const Bottom = () => {
         return pages.map((page, index) => {
             return (
                 <div onMouseEnter={() => setPageNumber(index)} className={page.name} key={index}>
-                    <Link
-                        className="header__navLink"
-                        to="skills"
-                        duration={400}
-                        smooth={true}
-                        activeClass="active"
-                    >
-                        <h1 >{page.value}</h1>
-                    </Link>
+                    <h1 >{page.value}</h1>
                 </div>
             )
         })

@@ -1,27 +1,38 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../assets/styles/Scrollable.css'
 
-class Scrollable extends React.Component{
+let i = 0;
+const Scrollable = () => {
+    const [animateSpan, setAnimateSpan] = useState('animate0');
 
-   handleScroll = (e) => {
-        let element = e.target
-        console.log(element.scroll)
+    const scrollableData = [
+        { content: 'Lorem ipsum dolor sitamet' },
+        { content: 'Lorem ipsum dolor sitamet' },
+        { content: 'Lorem ipsum dolor sitamet' },
+        { content: 'Lorem ipsum dolor sitamet' },
+        { content: 'Lorem ipsum dolor sitamet' }
+    ];
+
+    const showScrollableData = () => {
+        return scrollableData.map((data, index) => {
+            return <span className={`scrollable__span${index}` + animateSpan} key={index}>{data.content}</span>
+        })
     }
 
-    render(){
-        return (
-            <div className="scrollable" onScroll={this.handleScroll}>
-                <span>Scrollable</span>
-                <span>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.x</span>
-                <span>Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat numune kitabı oluşturmak</span>
-                <span>üzere bir yazı galerisini alarak karıştırdığı 1500'lerden beri endüstri standardı sahte </span>
-                <span>metinler olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle kalmamış, aynı </span>
-                <span>zamanda pek değişmeden elektronik dizgiye de sıçramıştır. 1960'larda Lorem Ipsum pasajları </span>
-                <span>da içeren Letraset yapraklarının yayınlanması ile ve yakın zamanda </span>
-                <span>Aldus PageMaker gibi Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile popüler olmuştur.</span>
-            </div>
-        )
+    const handleWheel = (e) => {
+        if (e.deltaY > 0) 
+            i === scrollableData.length - 1 ? i = 0 : i++ 
+        else
+            i === 0 ? i = scrollableData.length - 1 : i--
+
+        setAnimateSpan(`animate${i}`)
     }
+
+    return (
+        <div className="scrollable" onWheel={handleWheel}>
+            {showScrollableData()}
+        </div>
+    )
 }
 
 export default Scrollable
