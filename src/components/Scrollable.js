@@ -97,7 +97,7 @@ const Scrollable = () => {
 
     const showScrollableData = () => {
         return items.map((data, index) => {
-            return <span id={`spanID${index}`} className={`scrollable__span${index}` + " allspans"} key={index} style={data.styles}>{data.content}</span>
+            return <span className="allspans" key={index} style={data.styles}>{data.content}</span>
         })
     }
 

@@ -1,0 +1,62 @@
+.skillPages{
+    z-index: 3;
+}
+
+.skill__{
+    z-index: 2;
+    position: absolute;
+    display: flex;
+    background: none;
+    width: 60vw;
+    height: 80vh;
+    top: 10vh;
+    left: 20vw;
+    margin: 0;
+}
+
+.__imagesSection{
+    display: flex;
+    flex-direction: column;
+    width:30vw;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.topImage, .bottomImage{
+    transition: transform 0.4s;
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+
+.topImage > img, .bottomImage > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.__infoSection{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width:30vw;
+    height: 80vh;
+    align-items: center;
+    overflow: hidden;
+}
+
+.title, .description{
+    transition: transform 0.4s;
+    width: 25vw;
+}
+
+.title{
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.description{
+    width: 25vw;
+    font-size: 24px;
+}

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import '../assets/styles/Home.css'
 import { About, Skills, Projects, Contact } from '../components'
 import { useStateValue } from '../reducer/StateProvider'
@@ -17,7 +17,7 @@ const Home = () => {
             case 3:
                 return '__contact'
             default:
-                return ''
+                return '__skills'
         }
     }
     return (

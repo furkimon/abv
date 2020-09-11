@@ -1,0 +1,7 @@
+export { default as lego} from './lego.jpg'
+export { default as lightbulb} from './lightbulb.jpg'
+export { default as orange} from './orange.jpg'
+export { default as squib} from './squib.jpg'
+export { default as coffee} from './coffee.jpg'
+export { default as fire} from './fire.jpg'
+export { default as books} from './books.jpg'

@@ -2,14 +2,24 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    transition: 0.5s;
+    transition: 0.3s; 
 }
+#aboutID{
 
+}
 .about__background {
     opacity: 0.8;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
+    background-image: url('../images/img1.jpg');
+    background-position: top left; 
+    background-size: 120% 120%;
+    /* background: no-repeat; */
+}
+
+.background__move{
+
 }
 
 .about__logo{

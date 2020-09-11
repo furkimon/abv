@@ -9,7 +9,7 @@
 
 .components{
     display: flex;
-    transition: 0.3s;
+    transition: 0.7s;
 }
 .__skills{
     transform: translateX(-100vw);
@@ -19,6 +19,7 @@
 }
 .__contact{
     transform: translateX(-300vw);
+
 }
 
 
