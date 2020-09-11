@@ -1,38 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../assets/styles/Home.css'
 import { About, Skills, Projects, Contact } from '../components'
 import { useStateValue } from '../reducer/StateProvider'
 
 const Home = () => {
     const [{ whichPage }] = useStateValue();
-
+   
     const showComponent = () => {
         switch (whichPage) {
             case 0:
-                return <About />
+                return '';
             case 1:
-                return <Skills />
+                return '__skills'
             case 2:
-                return <Projects />
+                return '__projects'
             case 3:
-                return <Contact />
+                return '__contact'
             default:
-                return <About />
+                return ''
         }
     }
-
-   
-    
     return (
-        <div id="homeID" className="home"   >
-            {showComponent()}
-            <div className="components">
+        <div className="home">
+            <div className={"components "+showComponent()}>
                 <About />
                 <Skills />
                 <Projects />
                 <Contact />
             </div>
-
         </div>
     )
 }

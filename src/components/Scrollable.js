@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import '../assets/styles/Scrollable.css'
 
-
 const scrollableData = [
     {
         content: '11Lorem ipsum dolor sitamet',
@@ -14,6 +13,7 @@ const scrollableData = [
     {
         content: '22ipsum Lorem dolor sitamet',
         styles: {
+            fontSize: "4vh",
             transform: "translateY(5rem)",
             opacity: 0.5,
             filter: "none"
@@ -22,6 +22,8 @@ const scrollableData = [
     {
         content: '33Dolor Lorem ipsum sitamet',
         styles: {
+            borderTop: '1px dashed white',
+            borderBottom : '1px dashed white',
             transform: "translateY(10rem)",
             opacity: 1,
             filter: "none"
@@ -30,6 +32,7 @@ const scrollableData = [
     {
         content: '44sitamet Lorem ipsum dolor',
         styles: {
+            fontSize: "4vh",
             transform: "translateY(15rem)",
             opacity: 0.5,
             filter: "none"
@@ -45,74 +48,60 @@ const scrollableData = [
     }
 ];
 
-let i = 0;
 const Scrollable = () => {
     const [items, setItems] = useState(scrollableData)
     const [step, setStep] = useState(0);
-    const cycle = ["0", "5rem", "10rem", "15rem", "20rem"];
+    const cycle = ["0", "5rem", "10rem", "15rem", "20rem"]; //must change if items change
 
     const handleWheel = (e) => {
         if (e.deltaY > 0) {
-            // i === scrollableData.length - 1 ? i = 0 : i++
-            setStep((prev) => (prev + 1 + items.length) % 5);
+            setStep((prev) => (prev + 1 + items.length) % items.length);
             setItems(
                 items.map((item, i) => {
-                    const xPos = (i + step + 1) % 5;
+                    const xPos = (i + step + 1) % items.length;
                     return {
                         ...item,
                         styles: {
                             transform: `translateY(${cycle[xPos]})`,
                             opacity: xPos === 0 || xPos === items.length - 1 ? 0 : xPos === 2 ? 1 : 0.5,
                             filter: xPos === 1 || xPos === items.length - 2 ? 'grayscale(1)' : 'initial',
-                            ['border-top'] : xPos === 2 ? '1px dashed white' : null,
-                            ['border-bottom'] : xPos === 2 ? '1px dashed white' : null,
-                            ['font-size'] : xPos === 1 || xPos === 3 ? '4vh' : xPos === 0 || xPos === items.length - 1 ? '3vh' : '5vh'
+                            borderTop : xPos === 2 ? '1px dashed white' : null,
+                            borderBottom : xPos === 2 ? '1px dashed white' : null,
+                            fontSize : xPos === 1 || xPos === 3 ? '4vh' : xPos === 0 || xPos === items.length - 1 ? '3vh' : '5vh'
 
                         }
                     };
                 })
             );
-
         } else {
-            // i === 0 ? i = scrollableData.length - 1 : i--
-            setStep((prev) => (prev - 1 + items.length) % 5);
+            setStep((prev) => (prev - 1 + items.length) % items.length);
             setItems(
                 items.map((item, i) => {
-                    const xPos = (i + step + items.length - 1) % 5;
+                    const xPos = (i + step + items.length - 1) % items.length;
                     return {
                         ...item,
                         styles: {
                             transform: `translateY(${cycle[xPos]})`,
                             opacity: xPos === 0 || xPos === items.length - 1 ? 0 : xPos === 2 ? 1 : 0.5,
-                            filter: xPos === 1 || xPos === items.length - 2 ? 'grayscale(1)' : 'initial'
+                            filter: xPos === 1 || xPos === items.length - 2 ? 'grayscale(1)' : 'initial',
+                            borderTop : xPos === 2 ? '1px dashed white' : null,
+                            borderBottom : xPos === 2 ? '1px dashed white' : null,
+                            fontSize : xPos === 1 || xPos === 3 ? '4vh' : xPos === 0 || xPos === items.length - 1 ? '3vh' : '5vh'
                         }
                     };
                 })
             );
 
         }
-        console.log(items)
-
     }
 
     const showScrollableData = () => {
-        console.log("screen :")
-        console.log(items)
         return items.map((data, index) => {
-            console.log("screen : " + data.styles.transform)
-            return (
-                    <span id={`spanID${index}`} className={`scrollable__span${index}` + " allspans"} key={index} style={data.styles}>
-                        {data.content}
-                    </span>
-            )
+            return <span id={`spanID${index}`} className={`scrollable__span${index}` + " allspans"} key={index} style={data.styles}>{data.content}</span>
         })
     }
 
-    return (
-        <div className="scrollable" onWheel={handleWheel}>
-            {showScrollableData()}
-        </div>
-    )
+    return <div className="scrollable" onWheel={handleWheel}>{showScrollableData()}</div>
 }
 
 export default Scrollable

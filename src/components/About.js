@@ -10,7 +10,6 @@ const About = () => {
     return (
         <div className="about">
             <img className="about__logo" src={ft} alt="ft" />
-            {/* <h1>This is the ABOUT component</h1> */}
             <Scrollable />
             <img className="about__background" src={img1} alt="img1" />
         </div>
