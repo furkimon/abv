@@ -18,10 +18,25 @@ const Bottom = () => {
         { name: "page4", value: "III" }
     ];
 
+    const highlightPageNumber = () => {
+        switch (whichPage) {
+            case 0:
+                return 'page1';
+            case 1:
+                return 'page2'
+            case 2:
+                return 'page3'
+            case 3:
+                return 'page4'
+            default:
+                return 'page1'
+        }
+    }
+
     const showPageNumbers = () => {
         return pages.map((page, index) => {
             return (
-                <div onMouseEnter={() => setPageNumber(index)} className={page.name} key={index}>
+                <div onMouseEnter={() => setPageNumber(index)} className={page.name + highlightPageNumber()} key={index}>
                     <h1 >{page.value}</h1>
                 </div>
             )

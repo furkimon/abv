@@ -16,7 +16,33 @@
 .contact > h1{
     z-index: 1;
     position: absolute;
-    color: white;
+    color: #1f1f1f;
     top: 50%;
     left: 20%;
+}
+.contact > h3{
+    z-index: 1;
+    position: absolute;
+    color: var(--color4);
+    top: 55%;
+    left: 20%;
+}
+
+@media only screen and (max-width: 768px) {
+
+    .contact > h1{
+        z-index: 1;
+        position: absolute;
+        color: 1f1f1f;
+        top: 40%;
+        left: 20%;
+    }
+    .contact > h3{
+        z-index: 1;
+        position: absolute;
+        color: var(--color4);
+        top: 55%;
+        left: 20%;
+    }
+    
 }

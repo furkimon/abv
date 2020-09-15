@@ -12,12 +12,39 @@
     transform-origin: 0 100%;
 }
 
-.sidebar > h3 {
+.sidebar__button {
     position: relative;
     top: 55%;
     left: -60%;
     color:white;
     transform: rotate(45deg);
     margin-left: 100px;
-    
+    cursor: pointer;
+    transition: 0.8s; 
+}
+.sidebar:hover{
+    /* animation : side_open 0.8s ease; */
+    transform: translateX(100vw);
+
+}
+
+@keyframes side__open {
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(100vw);
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .sidebar{
+        width:40px;
+        height: 40px;
+        padding: 20px;
+        line-height: 20px;
+    }
+    .sidebar__button {
+        margin-left: 55px;
+    }
 }

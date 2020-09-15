@@ -17,7 +17,7 @@ const Home = () => {
             case 3:
                 return '__contact'
             default:
-                return '__skills'
+                return '__projects'
         }
     }
     return (

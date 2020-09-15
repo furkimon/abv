@@ -10,11 +10,16 @@
 
 .bottom > div{
     padding: 10px;
-    border-radius: 100%;
+    border-radius: 50%;
 }
 
 .bottom > div:hover {
     background-color: white;
-    color: #F2F2F2;
+    opacity: 0.6;
+}
+
+.page1page1, .page2page2,
+.page3page3, .page4page4{
+    background-color: white;
     opacity: 0.6;
 }

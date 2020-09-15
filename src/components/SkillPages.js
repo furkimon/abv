@@ -8,17 +8,11 @@ const itemList = [
         description: "Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         topImage: lego,
         bottomImage: coffee,
-        styleTop: {
-            transform: "translateY(10%)",
-        },
-        styleBottom: {
-            transform: "translateY(-10%)",
-        },
         styleTitle: {
-            transform: "translateX(0)"
+            display : "none"
         },
         styleDescription: {
-            transform: "translateX(0)"
+            display : "none"
         }
     },
     {
@@ -26,17 +20,11 @@ const itemList = [
         description: "Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         topImage: fire,
         bottomImage: squib,
-        styleTop: {
-            transform: "translateY(10%)",
-        },
-        styleBottom: {
-            transform: "translateY(-10%)",
-        },
         styleTitle: {
-            transform: "translateX(0)"
+            display : "none"
         },
         styleDescription: {
-            transform: "translateX(0)"
+            display : "none"
         }
     },
     {
@@ -59,100 +47,68 @@ const itemList = [
     }
 ]
 
-let counter = itemList.length
 const SkillPages = () => {
     const [items, setItems] = useState(itemList)
+    const [step, setStep] = useState(1);
+
     const handleWheel = (e) => {
         if (e.deltaY > 0) {
-            counter < 2 ? counter = 1 : counter--
+            setStep((step + 1 + items.length) % items.length);
             setItems(
-                items.map((item, index) => {
-                    console.log(index)
-                    if (counter === index) {
-                        console.log("counter : " + counter)
+                items.map((item, i) => {
+                    const xPos = (i + step + 1) % items.length;
                         return {
                             ...item,
-                            styleTop: {
-                                transform: "translateY(-100%)",
-                            },
-                            styleBottom: {
-                                transform: "translateY(100%)",
-                            },
-                            styleTitle: {
-                                transform: "translateX(120%)"
-                            },
-                            styleDescription: {
-                                transform: "translateX(120%)"
-                            }
+                            styleTop: 
+                              xPos ===  0 
+                              ? {animation : "visible-top 0.8s ease forwards"} 
+                              : {animation : "invisible-top 0.8s ease forwards"},   
+
+                            styleBottom: 
+                              xPos ===  0 
+                              ? {animation : "visible-bottom 0.8s ease forwards"}
+                              : {animation : "invisible-bottom 0.8s ease forwards"},   
+
+                            styleTitle: 
+                              xPos === 0 
+                              ? {animation : "fade-in 0.8s ease forwards"}
+                              :  {animation : "fade-out 0.8s ease forwards"}, 
+
+                            styleDescription: 
+                              xPos === 0 
+                              ? {animation : "fade-in 0.8s ease forwards"}
+                              : {animation : "fade-out 0.8s ease forwards"},  
                         }
-                    } else if (index === counter - 1) {
-                        return {
-                            ...item,
-                            styleTop: {
-                                transform: "translateY(0)",
-                            },
-                            styleBottom: {
-                                transform: "translateY(0)",
-                            },
-                            styleTitle: {
-                                transform: "translateX(0)"
-                            },
-                            styleDescription: {
-                                transform: "translateX(0)"
-                            }
-                        }
-                    } else {
-                        return { ...item }
-                    }
-                }
-                )
-            )
-            console.log(items)
+                    }))
         } else {
-            counter > 1 ? counter = 2 : counter = counter
+            setStep((step - 1 + items.length) % items.length);
             setItems(
-                items.map((item, index) => {
-                    if (counter === index) {
-                        console.log("counter : " + counter)
-                        return {
-                            ...item,
-                            styleTop: {
-                                transform: "translateY(0)",
-                            },
-                            styleBottom: {
-                                transform: "translateY(0)",
-                            },
-                            styleTitle: {
-                                transform: "translateX(0)"
-                            },
-                            styleDescription: {
-                                transform: "translateX(0)"
-                            }
-                        }
-                    
-                    } else if (index === counter - 1) {
-                        return {
-                            ...item,
-                            styleTop: {
-                                transform: "translateY(10%)",
-                            },
-                            styleBottom: {
-                                transform: "translateY(-10%)",
-                            },
-                            styleTitle: {
-                                transform: "translateX(0)"
-                            },
-                            styleDescription: {
-                                transform: "translateX(0)"
-                            }
-                        }
-                    } else {
-                        return { ...item }
+                items.map((item, i) => {
+                    const xPos = (i + step + items.length - 1) % items.length;
+                    return{
+                        ...item,
+                        styleTop: 
+                          xPos ===  0 
+                          ? {animation : "visible-top2 0.8s ease forwards"} 
+                          : {animation : "invisible-top2 0.8s ease forwards"},   
+
+                        styleBottom: 
+                          xPos ===  0 
+                          ? {animation : "visible-bottom2 0.8s ease forwards"}
+                          : {animation : "invisible-bottom2 0.8s ease forwards"},   
+
+                        styleTitle: 
+                          xPos === 0 
+                          ? {animation : "fade-in 0.8s ease forwards"}
+                          :  {animation : "fade-out 0.8s ease forwards"}, 
+
+                        styleDescription: 
+                          xPos === 0 
+                          ? {animation : "fade-in 0.8s ease forwards"}
+                          : {animation : "fade-out 0.8s ease forwards"},  
                     }
                 })
             )
-            counter++
-            console.log(items)
         }
 
     }
@@ -171,10 +127,10 @@ const SkillPages = () => {
                             </div>
                         </div>
                         <div className="__infoSection">
-                            <div className="title" style={item.styleTitle}>
+                            <div className="skill__title" style={item.styleTitle}>
                                 {item.title}
                             </div>
-                            <div className="description" style={item.styleDescription}>
+                            <div className="skill__description" style={item.styleDescription}>
                                 {item.description}
                             </div>
                         </div>

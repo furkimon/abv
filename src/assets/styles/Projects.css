@@ -3,20 +3,82 @@
     width: 100vw;
     height: 100vh;
     transition: 0.5s;
-
+    display: flex;
+    justify-content: center;
 }
-
+.projects__info{
+    z-index: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    line-height: 8vh;
+    width: max-content;
+    height: min-content;
+    top: 40%;
+    left: 15%;
+    color: #ffffff;
+}
 .projects__background{
+    position: absolute;
     opacity: 0.8;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
 }
-
-.projects > h1{
+.projects__wrapper{
     z-index: 1;
-    position: absolute;
-    color: white;
-    top: 50%;
-    left: 20%;
+    position: relative;
+    left: 30vw;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    -ms-overflow-style: none;  
+    scrollbar-width: none;  
+}
+.projectCards{
+    
+}
+.projects__wrapper::-webkit-scrollbar { /*Chrome, safari opera*/
+    display: none;
+  }
+
+.projectCardDiv{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    margin: 20px;
+}
+
+@media only screen and (max-width: 768px) {
+    .projects__info{
+        line-height: 4vh;
+        width: 80%;
+        top: 10%;
+        left: 5%;
+        padding: 20px;
+        border-radius: 20px;
+        color: #1f1f1f;
+        background-color: #ffffdd;
+        z-index: 1;
+    }
+
+    .projectCards{
+        z-index: 1;
+        position: relative;
+        top: 35vh;
+        right: 30%;
+        left: 0;
+    }
+    .projects__wrapper::-webkit-scrollbar { /*Chrome, safari opera*/
+        display: none;
+      }
+
+    .projects__wrapper{
+        width: 100%;
+        left: 0;
+    }
+
+    
 }

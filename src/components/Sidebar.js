@@ -2,14 +2,14 @@ import React from 'react'
 import '../assets/styles/Sidebar.css'
 
 const Sidebar = () => {
+    var buttona = document.getElementById('sideButton')
 
     const scrollbutton = () => {
-        window.scrollBy(500,500);
-        console.log('sidebar click ' + window.scrollX + " " + window.scrollY)
+        console.log(buttona)
     }
     return (
-        <div className="sidebar">
-            <h3 onClick={scrollbutton}>≡</h3>
+        <div  className="sidebar">
+            <div className="sidebar__button" id="sideButton" onClick={scrollbutton}>≡</div>
         </div>
     )
 }
