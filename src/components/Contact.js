@@ -3,6 +3,7 @@ import '../assets/styles/Contact.css'
 import img4 from '../assets/images/img4.jpg'
 
 const Contact = () => {
+     
     return (
         <div className="contact">
             <h1>SAY HELLO TO FURKIMON</h1>

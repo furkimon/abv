@@ -14,10 +14,12 @@ const Sidebar = () => {
     const [toggle, setToggle] = useState(false)
     const [dValue, setDValue] = useState(curves[0])
     const [compStyle, setCompStyle] = useState({})
+    const [ sideStyle, setSideStyle] = useState({});
 
     useEffect(() => {
         const interval = setInterval(() => {
             setDValue(curves[i])
+            console.log(i)
             i++
             if (i === curves.length) i = 0;
         }, 800)
@@ -26,25 +28,33 @@ const Sidebar = () => {
 
     const scrollbutton = () => {
         toggle === true
-            ? setCompStyle({ transform: "translateX(-110%)", zIndex: "5",  transition: "transform 3s" })
-            : setCompStyle({ transform: "translateX(0)", zIndex: "5",  transition: "transform 3s"  })
-            console.log(toggle)
+        ? setCompStyle({transform: "translateX(-60%)", zIndex: "5"}) 
+        : setCompStyle({transform: "translateX(0)", zIndex : "5"})
+
+        // if(toggle === true){
+        //     setTimeout(()=>{
+        //         setSideStyle({zIndex : "0"})
+        //     }, 5000)
+        // }
+
+        // toggle === true
+        // ? setSideStyle({zIndex : "1"})
+        // : setSideStyle({zIndex : "6"})
 
         setToggle(!toggle)
     }
 
     return (
-        <div className="sidebar">
-            <div className="sidebar__slide" style={compStyle}>
+        <div className="sidebar" style={sideStyle}>
+            <div className="sidebar__tip" onClick={scrollbutton}>
+                <div className="sidebar__button" id="sideButton" >≡</div>
+            </div>
+
+            <div className="sidebar__component" style={compStyle}>
                 <div className="sidebar__screen"></div>
                 <svg className="sidebar__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                     <path fill="black" fillOpacity="1" d={dValue}></path>
                 </svg>
-            </div>
-            <div className="sidebar__tip" onClick={scrollbutton}>
-                <div className="sidebar__button">
-                ≡
-                </div>
             </div>
         </div>
     )

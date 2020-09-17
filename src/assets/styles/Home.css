@@ -1,4 +1,6 @@
 .home{
+    z-index: 3;
+    position: relative;
     display: flex;
     overflow-x: hidden;
     overflow-y: hidden;

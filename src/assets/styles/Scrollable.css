@@ -1,4 +1,6 @@
 .scrollable {
+   z-index: 3;
+   position: relative;
    display: flex;
    text-align: center;
    background-color: black;

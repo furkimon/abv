@@ -10,7 +10,7 @@ const ProjectCard = ({ projectCard }) => {
                 <img className="image" src={image} alt="" />
                 <div className="title">{title}</div>
                 <div className="description">{description}</div>
-                <a href={url} target="_blank" rel="noopener noreferrer"><img className="goto" src={goto} /></a>
+                <a href={url} target="_blank" rel="noopener noreferrer"><img className="goto" src={goto} alt=""/></a>
         </div>
         </div >
     )
