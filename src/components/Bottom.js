@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import '../assets/styles/Bottom.css'
 import { useStateValue } from '../reducer/StateProvider'
+import { Email, Accessibility, EmojiEvents, Equalizer } from '@material-ui/icons';
 
 
 const Bottom = () => {
@@ -12,10 +13,10 @@ const Bottom = () => {
     }, [pageNumber, dispatch])
 
     const pages = [
-        { name: "page1", value: "0" },
-        { name: "page2", value: "I" },
-        { name: "page3", value: "II" },
-        { name: "page4", value: "III" }
+        { name: "page1", value: <Accessibility/> },
+        { name: "page2", value: <Equalizer/> },
+        { name: "page3", value: <EmojiEvents/> },
+        { name: "page4", value: <Email/> }
     ];
 
     const highlightPageNumber = () => {

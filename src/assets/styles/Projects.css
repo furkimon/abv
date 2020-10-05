@@ -1,6 +1,7 @@
 .projects {
     z-index: 3;
     position: relative;
+    background-color: #FFFFFF;
     width: 100vw;
     height: 100vh;
     transition: 0.5s;
@@ -17,11 +18,16 @@
     height: min-content;
     top: 40%;
     left: 15%;
-    color: #ffffff;
+    color: #010001;
+}
+.projects__info > h1{
+    text-decoration: underline #ff5d8f;
+
 }
 .projects__background{
     position: absolute;
-    opacity: 0.8;
+    opacity: 0.2;
+    filter: grayscale(1);
     width: 100vw;
     height: 100vh;
     object-fit: cover;
@@ -37,9 +43,7 @@
     -ms-overflow-style: none;  
     scrollbar-width: none;  
 }
-.projectCards{
-    
-}
+
 .projects__wrapper::-webkit-scrollbar { /*Chrome, safari opera*/
     display: none;
   }

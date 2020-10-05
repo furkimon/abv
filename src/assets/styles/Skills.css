@@ -1,5 +1,6 @@
 .skills {
     position: relative;
+    background-color: #FFFFFF;
     width: 100vw;
     height: 100vh;
     transition: 0.5s;
@@ -12,10 +13,10 @@
     object-fit: cover;
 }
 
-.skills > h1{
+/* .skills > h1{
     z-index: 1;
     position: absolute;
-    color: white;
+    color: #010001;
     top: 50%;
     left: 20%;
-}
+} */

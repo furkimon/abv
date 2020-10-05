@@ -28,22 +28,35 @@ const itemList = [
         }
     },
     {
+        title: "FALAM LOREM",
+        description: "Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        topImage: fire,
+        bottomImage: squib,
+        styleTitle: {
+            display : "none"
+        },
+        styleDescription: {
+            display : "none"
+        }
+    },
+    {
+        title: "LOR PEYNIREM",
+        description: "Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
+        topImage: fire,
+        bottomImage: squib,
+        styleTitle: {
+            display : "none"
+        },
+        styleDescription: {
+            display : "none"
+        }
+    },
+    {
         title: "REMLO SUMIP",
         description: "Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam",
         topImage: lightbulb,
         bottomImage: orange,
-        styleTop: {
-            transform: "translateY(0)",
-        },
-        styleBottom: {
-            transform: "translateY(0)",
-        },
-        styleTitle: {
-            transform: "translateX(0)"
-        },
-        styleDescription: {
-            transform: "translateX(0)"
-        }
+        
     }
 ]
 

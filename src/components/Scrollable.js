@@ -3,19 +3,19 @@ import '../assets/styles/Scrollable.css'
 
 const scrollableData = [
     {
-        content: '11Lorem ipsum dolor sitamet',
+        content: 'Can be found on this website',
         styles: {
             opacity: 0,
         }
     },
     {
-        content: '22ipsum Lorem dolor sitamet',
+        content: ' roam free! ',
         styles: {
             opacity: 0.5,
         }
     },
     {
-        content: '33Dolor Lorem ipsum sitamet',
+        content: 'Hi, This website belongs to',
         styles: {
             borderTop: '1px dashed white',
             borderBottom: '1px dashed white',
@@ -23,13 +23,13 @@ const scrollableData = [
         }
     },
     {
-        content: '44sitamet Lorem ipsum dolor',
+        content: 'a Software Developer',
         styles: {
             opacity: 0.5,
         }
     },
     {
-        content: '55falan ipsum dolor sitamet',
+        content: 'Owned skills and done Projects',
         styles: {
             opacity: 0,
         }
@@ -44,7 +44,7 @@ const Scrollable = () => {
 
     const handleWheel = (e) => {
         
-        if (e.deltaY > 0) {
+        if (e.deltaY < 0) {
             setStep((prev) => (prev + 1 + items.length) % items.length);
             setItems(
                 items.map((item, i) => {

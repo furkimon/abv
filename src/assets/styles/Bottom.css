@@ -9,17 +9,32 @@
 }
 
 .bottom > div{
-    padding: 10px;
-    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
+    width: 50px;
+    height: 50px;
+    color: white;
+    border-radius: 205px;
+    box-shadow:  -18px 18px 51px #4e4a4a, 
+                 18px -18px 51px #8e8686;
+    opacity: 0.6;
 }
 
-.bottom > div:hover {
-    background-color: white;
-    opacity: 0.6;
+.bottom > div > h1 {
+    color: black;
+}
+
+.bottom > div:hover{
+    
 }
 
 .page1page1, .page2page2,
 .page3page3, .page4page4{
-    background-color: white;
-    opacity: 0.6;
+    color: #6e6868;
+    border-radius: 205px;
+    background: linear-gradient(225deg, #635e5e, #766f6f);
+    box-shadow:  -18px 18px 51px #4e4a4a, 
+                 18px -18px 51px #8e8686;
+    opacity: 0.6 !important;
 }

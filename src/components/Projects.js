@@ -1,6 +1,6 @@
 import React from 'react'
 import '../assets/styles/Projects.css'
-import { img3, minion, amazon, tinder, airbnb, covid } from '../assets/images'
+import { binary2, minion, amazon, tinder, airbnb, covid } from '../assets/images'
 import ProjectCard from './ProjectCard'
 
 const Projects = () => {
@@ -55,7 +55,7 @@ const Projects = () => {
 
     return (
         <div className="projects">
-            <img className="projects__background" src={img3} alt="img3" />
+            <img className="projects__background" src={binary2} alt="binary" />
             <div className="projects__wrapper">
                 <div className="projectCards">
                     {showProjectCards()}

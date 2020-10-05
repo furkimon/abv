@@ -14,6 +14,7 @@ const Sidebar = () => {
     const [toggle, setToggle] = useState(false)
     const [dValue, setDValue] = useState(curves[0])
     const [compStyle, setCompStyle] = useState({})
+    const [tipStyle, setTipStyle] = useState({})
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -25,10 +26,31 @@ const Sidebar = () => {
     })
 
     const scrollbutton = () => {
-        toggle === true
-            ? setCompStyle({ transform: "translateX(-110%)", zIndex: "5",  transition: "transform 3s" })
-            : setCompStyle({ transform: "translateX(0)", zIndex: "5",  transition: "transform 3s"  })
-            console.log(toggle)
+        (window.matchMedia("(max-width: 1024px)"))
+        ? (
+            toggle === true
+            ? setCompStyle({ transform: "translateX(-130%)", zIndex: "5", transition: "transform 1.5s" })
+            : setCompStyle({ transform: "translateX(0)", zIndex: "5", transition: "transform 1.5s" })
+        ) : (
+            toggle === true
+            ? setCompStyle({ transform: "translateX(-110%)", zIndex: "5", transition: "transform 3s" })
+            : setCompStyle({ transform: "translateX(0)", zIndex: "5", transition: "transform 2.2s" })
+        )
+        // toggle === false 
+        // ? setTipStyle({transform: "translateX(90vw) rotate(-45deg)", transition: "transform 1.5s", transitionDelay: "0.3s",  }) 
+        // : setTipStyle({ transform: "translateX(0) rotate(-45deg)",  transition: "transform 0.8s"})
+
+        (window.matchMedia("(max-width: 1024px)"))
+        ? (
+            toggle === false 
+            ? setTipStyle({transform: "translateX(90vw) rotate(-45deg)", transition: "transform 1s", transitionDelay: "0.2s",  }) 
+            : setTipStyle({ transform: "translateX(0) rotate(-45deg)",  transition: "transform 0.8s"})
+        ) : (
+            toggle === false 
+            ? setTipStyle({transform: "translateX(90vw) rotate(-45deg)", transition: "transform 1.5s", transitionDelay: "0.3s",  }) 
+            : setTipStyle({ transform: "translateX(0) rotate(-45deg)",  transition: "transform 0.8s"})
+        )
+        
 
         setToggle(!toggle)
     }
@@ -36,14 +58,22 @@ const Sidebar = () => {
     return (
         <div className="sidebar">
             <div className="sidebar__slide" style={compStyle}>
-                <div className="sidebar__screen"></div>
+                <div className="sidebar__screen" onClick={scrollbutton}>
+                    <div className="sidebar__navbar">
+                        <h1 className="hh1">ABOUT</h1>
+                        <h1 className="hh1">SKILLS</h1>
+                        <h1 className="hh1">PROJECTS</h1>
+                        <h1 className="hh1">CONTACT</h1>
+                    </div>
+
+                </div>
                 <svg className="sidebar__svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                     <path fill="black" fillOpacity="1" d={dValue}></path>
                 </svg>
             </div>
-            <div className="sidebar__tip" onClick={scrollbutton}>
+            <div className="sidebar__tip" style={tipStyle} onClick={scrollbutton}>
                 <div className="sidebar__button">
-                ≡
+                    ≡
                 </div>
             </div>
         </div>

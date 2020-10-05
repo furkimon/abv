@@ -27,7 +27,7 @@
     transition: transform 0.7s;
     width: 100%;
     height: 50%;
-    overflow-y: hidden;
+    overflow: hidden;
 
 }
 
@@ -35,10 +35,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    overflow-y: hidden;
+
 }
 
 .__infoSection{
-    color: white;
+    color: #010001;
     display: flex;
     flex-direction: column;
     justify-content: center;
